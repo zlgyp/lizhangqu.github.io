@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>安卓弟的博客</title>
+    <title>categories | 安卓弟的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="Li Zhangqu">
@@ -24,9 +24,9 @@
     <link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
 
-  <body>
-    <header>
-      <div>
+    <body>
+      <header>
+        <div>
 		
 			<div id="textlogo">
 				<h1 class="site-name"><a href="/" title="安卓弟的博客">安卓弟的博客</a></h1>
@@ -58,92 +58,20 @@
 			</nav>			
 </div>
 
-    </header>
-    <div id="container">
-      <div id="main">
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/11/25/Test/" title="Test" itemprop="url">
-  
-    <h1 itemprop="name">Test</h1>
-    
-     
-           <p itemprop="description" ></p>
-        
-    
-    <time datetime="2015-11-25T11:19:44.000Z" itemprop="datePublished">2015-11-25</time>
-  </a>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/11/25/hello-world/" title="Hello World" itemprop="url">
-  
-    <h1 itemprop="name">Hello World</h1>
-    
-     
-           <p itemprop="description" >Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the </p>
-        
-    
-    <time datetime="2015-11-25T11:06:45.379Z" itemprop="datePublished">2015-11-25</time>
-  </a>
-</section>
-
+      </header>
+      <div id="container">
+          
+<div class="archive-title" >
+<h2 class="category-icon">分类</h2>
 
 </div>
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
-
-<div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
-<aside class="clearfix">
-
-  
-
-  
-
-  <div class="rsspart">
-	<a href="null" target="_blank" title="rss">RSS 订阅</a>
+<div id="main" class="archive-part">
+<div class="all-list-box"></div>
 </div>
 
-</aside>
-</div>
-    </div>
-    <footer><div id="footer" >
-	
-	<div class="line">
-		<span></span>
-		<div class="author"></div>
-	</div>
-	
-	
-	<section class="info">
-		<p> Hello ,I&#39;m Li Zhangqu Page <br/>
-			This is my blog,believe it or not.</p>
-	</section>
-	 
-	<div class="social-font clearfix">
-		
-		<a href="http://weibo.com/3262478847" target="_blank" title="weibo"></a>
-		
-		
-		<a href="http://www.zhihu.com/people/zhangqu-li" target="_blank" title="twitter"></a>
-		
-		
-		
-		<a href="https://github.com/lizhangqu" target="_blank" title="github"></a>
-		
-		
-		
-	</div>
-		<p class="copyright"> © 2015 Powered by Li Zhangqu
-		<!--
-		<a href="http://yoursite.com" target="_blank" title="Li Zhangqu">Li Zhangqu</a>
-		-->
-		</p>
-</div>
-</footer>
-    <script src="/js/jquery-2.1.0.min.js"></script>
+
+      </div>
+      <script src="/js/jquery-2.1.0.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){ 
   $('.navbar').click(function(){
@@ -192,11 +120,26 @@ $(document).ready(function(){
 
 
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var list    = $('.archive-title a'),
+      box     = $('.all-list-box'),
+      first   = $('.archive-title a:first-of-type');
+      box.load(first.attr('data-src').toString()+' #archive-page');
+      first.addClass('current');
+  list.each(function(){
+    $(this).click(function(){
+      var listSrc=$(this).attr('data-src').toString()+' #archive-page';
+      box.load(listSrc);
+      list.removeClass('current');
+      $(this).addClass('current');
+     });  
+    });
+  }); 
+</script>
 
 
 
-	<!--
-	<a href="https://github.com/lizhangqu"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
-	-->
-  </body>
- </html>
+
+    </body>
+   </html>
