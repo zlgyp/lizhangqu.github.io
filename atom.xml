@@ -43,4 +43,28 @@
     
   </entry>
   
+  <entry>
+    <title><![CDATA[Android开发中常见的设计模式]]></title>
+    <link href="http://lizhangqu.com/2015/11/26/Android-Design-Pattern/"/>
+    <id>http://lizhangqu.com/2015/11/26/Android-Design-Pattern/</id>
+    <published>2015-11-26T04:19:16.000Z</published>
+    <updated>2015-11-26T04:20:53.185Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    <![CDATA[设计模式在开发中尤其常见，要写出优良的可扩展的代码，设计模式显得尤其重要，在Android中，无论是系统还是开源框架，涉及到了大量的设计模式，掌握这些设计模式对能力的提升具有显著的作用]]>
+    
+    </summary>
+    
+      <category term="Android" scheme="http://lizhangqu.com/tags/Android/"/>
+    
+      <category term="Design Pattern" scheme="http://lizhangqu.com/tags/Design-Pattern/"/>
+    
+      <category term="安卓" scheme="http://lizhangqu.com/tags/%E5%AE%89%E5%8D%93/"/>
+    
+      <category term="设计模式" scheme="http://lizhangqu.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="Android" scheme="http://lizhangqu.com/categories/Android/"/>
+    
+  </entry>
+  
 </feed>
