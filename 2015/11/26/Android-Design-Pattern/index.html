@@ -1,96 +1,108 @@
-<!DOCTYPE html>
-<html>
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   
-  <title>Android开发中常见的设计模式 | 区长的博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="设计模式在开发中尤其常见，要写出优良的可扩展的代码，设计模式显得尤其重要，在Android中，无论是系统还是开源框架，涉及到了大量的设计模式，掌握这些设计模式对能力的提升具有显著的作用">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Android开发中常见的设计模式">
-<meta property="og:url" content="http://lizhangqu.com/2015/11/26/Android-Design-Pattern/index.html">
-<meta property="og:site_name" content="区长的博客">
-<meta property="og:description" content="设计模式在开发中尤其常见，要写出优良的可扩展的代码，设计模式显得尤其重要，在Android中，无论是系统还是开源框架，涉及到了大量的设计模式，掌握这些设计模式对能力的提升具有显著的作用">
-<meta property="og:updated_time" content="2016-04-25T14:55:51.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android开发中常见的设计模式">
-<meta name="twitter:description" content="设计模式在开发中尤其常见，要写出优良的可扩展的代码，设计模式显得尤其重要，在Android中，无论是系统还是开源框架，涉及到了大量的设计模式，掌握这些设计模式对能力的提升具有显著的作用">
-  
-    <link rel="alternative" href="/atom.xml" title="区长的博客" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css">
-  
+    <title>Android开发中常见的设计模式 | 区长的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="区长">
+    
+    <meta name="description" itemprop="description" content="设计模式在开发中尤其常见，要写出优良的可扩展的代码，设计模式显得尤其重要，在Android中，无论是系统还是开源框架，涉及到了大量的设计模式，掌握这些设计模式对能力的提升具有显著的作用">
+    
+    
+    
+    
+    <link rel="alternate" href="/atom.xml" title="区长的博客" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/logo.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/susbjjbcy.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/susbjjbcy.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+	
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6f513b01dea7cfd334e26d2826fb73c";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+	
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
 
 </head>
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">区长的博客</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">业精于勤，荒于嬉；行成于思，毁于随</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://lizhangqu.com"></form>
-      </div>
-    </div>
-  </div>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="区长的博客">区长的博客</a></h1>
+				<h2 class="blog-motto">业精于勤，荒于嬉；行成于思，毁于随</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/tags">标签</a></li>
+					
+						<li><a href="/categories">分类</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:lizhangqu.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/11/26/Android-Design-Pattern/" title="Android开发中常见的设计模式" itemprop="url">Android开发中常见的设计模式</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="https://plus.google.com/114779957383765950000?rel=author" title="区长" target="_blank" itemprop="author">区长</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2015-11-26T04:19:16.000Z" itemprop="datePublished">2015-11-26</time>
+    更新日期:<time datetime="2016-04-25T14:55:51.000Z" itemprop="dateModified">2016-04-25</time>
+    
+  </p>
 </header>
-      <div class="outer">
-        <section id="main"><article id="post-Android-Design-Pattern" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/11/26/Android-Design-Pattern/" class="article-date">
-  <time datetime="2015-11-26T04:19:16.000Z" itemprop="datePublished">2015-11-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Android/">Android</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Android开发中常见的设计模式
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>对于开发人员来说，设计模式有时候就是一道坎，但是设计模式又非常有用，过了这道坎，它可以让你水平提高一个档次。而在android开发中，必要的了解一些设计模式又是非常有必要的。对于想系统的学习设计模式的同学，这里推荐2本书。一本是Head First系列的Head Hirst Design Pattern，英文好的可以看英文，可以多读几遍。另外一本是大话设计模式。</p>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#单例模式"><span class="toc-number">1.</span> <span class="toc-text">单例模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Build模式"><span class="toc-number">2.</span> <span class="toc-text">Build模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#观察者模式"><span class="toc-number">3.</span> <span class="toc-text">观察者模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原型模式"><span class="toc-number">4.</span> <span class="toc-text">原型模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#策略模式"><span class="toc-number">5.</span> <span class="toc-text">策略模式</span></a></li></ol>
+		</div>
+		
+		<p>对于开发人员来说，设计模式有时候就是一道坎，但是设计模式又非常有用，过了这道坎，它可以让你水平提高一个档次。而在android开发中，必要的了解一些设计模式又是非常有必要的。对于想系统的学习设计模式的同学，这里推荐2本书。一本是Head First系列的Head Hirst Design Pattern，英文好的可以看英文，可以多读几遍。另外一本是大话设计模式。</p>
 <h2 id="单例模式">单例模式</h2><p>首先了解一些单例模式的概念。</p>
 <blockquote>
 <p>确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例。</p>
@@ -362,126 +374,296 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * An interface for a cache keyed by a String with a byte array as data.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Cache</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * Retrieves an entry from the cache.</span><br><span class="line">     * <span class="doctag">@param</span> key Cache key</span><br><span class="line">     * <span class="doctag">@return</span> An &#123;<span class="doctag">@link</span> Entry&#125; or null in the event of a cache miss</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Entry <span class="title">get</span><span class="params">(String key)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * Adds or replaces an entry to the cache.</span><br><span class="line">     * <span class="doctag">@param</span> key Cache key</span><br><span class="line">     * <span class="doctag">@param</span> entry Data to store and metadata for cache coherency, TTL, etc.</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">put</span><span class="params">(String key, Entry entry)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * Performs any potentially long-running actions needed to initialize the cache;</span><br><span class="line">     * will be called from a worker thread.</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">initialize</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * Invalidates an entry in the cache.</span><br><span class="line">     * <span class="doctag">@param</span> key Cache key</span><br><span class="line">     * <span class="doctag">@param</span> fullExpire True to fully expire the entry, false to soft expire</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">invalidate</span><span class="params">(String key, <span class="keyword">boolean</span> fullExpire)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * Removes an entry from the cache.</span><br><span class="line">     * <span class="doctag">@param</span> key Cache key</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">remove</span><span class="params">(String key)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * Empties the cache.</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * Data and metadata for an entry returned by the cache.</span><br><span class="line">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Entry</span> </span>&#123;</span><br><span class="line">        <span class="comment">/** The data returned from cache. */</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">byte</span>[] data;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/** ETag for cache coherency. */</span></span><br><span class="line">        <span class="keyword">public</span> String etag;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/** Date of this response as reported by the server. */</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">long</span> serverDate;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/** The last modified date for the requested object. */</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">long</span> lastModified;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/** TTL for this record. */</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">long</span> ttl;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/** Soft TTL for this record. */</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">long</span> softTtl;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/** Immutable response headers as received from server; must be non-null. */</span></span><br><span class="line">        <span class="keyword">public</span> Map&lt;String, String&gt; responseHeaders = Collections.emptyMap();</span><br><span class="line"></span><br><span class="line">        <span class="comment">/** True if the entry is expired. */</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isExpired</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.ttl &lt; System.currentTimeMillis();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/** True if a refresh is needed from the original data source. */</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">refreshNeeded</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.softTtl &lt; System.currentTimeMillis();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>它有两个实现类<strong>NoCache</strong>和<strong>DiskBasedCache</strong>，使用的时候设置对应的缓存策略即可。</p>
 <p>在android开发中，ViewPager是一个使用非常常见的控件，它的使用往往需要伴随一个Indicator指示器。<strong>如果让你重新实现一个ViewPager，并且带有Indicator</strong>，这时候，你会不会想到用策略模式呢？在你自己写的ViewPager中（不是系统的，当然你也可以继承系统的）持有一个策略接口Indicator的变量，通过set方法设置策略，然后ViewPager滑动的时候调用策略接口的对应方法改变指示器。默认提供几个Indicator接口的实现类，比如圆形指示器CircleIndicator、线性指示器LineIndicator、Tab指示器TabIndicator、图标指示器IconIndicator 等等等等。有兴趣的话自己去实现一个吧。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://lizhangqu.com/2015/11/26/Android-Design-Pattern/" data-id="cing5d11g0003fx6nvk4bvisx" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Build模式/">Build模式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Design-Pattern/">Design Pattern</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/单例模式/">单例模式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/原型模式/">原型模式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安卓/">安卓</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/策略模式/">策略模式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/观察者模式/">观察者模式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
-
-    </footer>
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Android/">Android</a><a href="/tags/Design-Pattern/">Design Pattern</a><a href="/tags/安卓/">安卓</a><a href="/tags/设计模式/">设计模式</a><a href="/tags/单例模式/">单例模式</a><a href="/tags/Build模式/">Build模式</a><a href="/tags/观察者模式/">观察者模式</a><a href="/tags/原型模式/">原型模式</a><a href="/tags/策略模式/">策略模式</a>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2016/04/25/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Hello World
-        
-      </div>
-    </a>
-  
-  
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Android/">Android</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://lizhangqu.com/2015/11/26/Android-Design-Pattern/" data-title="Android开发中常见的设计模式 | 区长的博客" data-tsina="3262478847" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2016/04/25/hello-world/" title="Hello World">
+  <strong>上一篇:</strong><br/>
+  <span>
+  Hello World</span>
+</a>
+</div>
+
+
 </nav>
 
-  
-</article>
-
+	
+<section class="comment">
+	<div class="ds-thread"></div>
 </section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">1</span></li></ul>
-    </div>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#单例模式"><span class="toc-number">1.</span> <span class="toc-text">单例模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Build模式"><span class="toc-number">2.</span> <span class="toc-text">Build模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#观察者模式"><span class="toc-number">3.</span> <span class="toc-text">观察者模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原型模式"><span class="toc-number">4.</span> <span class="toc-text">原型模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#策略模式"><span class="toc-number">5.</span> <span class="toc-text">策略模式</span></a></li></ol>
   </div>
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Android/">Android</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Build模式/">Build模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Design-Pattern/">Design Pattern</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/单例模式/">单例模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/原型模式/">原型模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/安卓/">安卓</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/策略模式/">策略模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/观察者模式/">观察者模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  <div class="rsspart">
+	
+</div>
+<div class="wechatpart">
+	<p class="asidetitle">打 赏</p>
+    <img class="rsspart" src="/img/wechat.png">
+	
+</div>
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Android/" style="font-size: 10px;">Android</a> <a href="/tags/Build模式/" style="font-size: 10px;">Build模式</a> <a href="/tags/Design-Pattern/" style="font-size: 10px;">Design Pattern</a> <a href="/tags/单例模式/" style="font-size: 10px;">单例模式</a> <a href="/tags/原型模式/" style="font-size: 10px;">原型模式</a> <a href="/tags/安卓/" style="font-size: 10px;">安卓</a> <a href="/tags/策略模式/" style="font-size: 10px;">策略模式</a> <a href="/tags/观察者模式/" style="font-size: 10px;">观察者模式</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a>
-    </div>
-  </div>
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/Android/" title="Android">Android<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Build模式/" title="Build模式">Build模式<sup>1</sup></a></li>
+		
+			<li><a href="/tags/Design-Pattern/" title="Design Pattern">Design Pattern<sup>1</sup></a></li>
+		
+			<li><a href="/tags/单例模式/" title="单例模式">单例模式<sup>1</sup></a></li>
+		
+			<li><a href="/tags/原型模式/" title="原型模式">原型模式<sup>1</sup></a></li>
+		
+			<li><a href="/tags/安卓/" title="安卓">安卓<sup>1</sup></a></li>
+		
+			<li><a href="/tags/策略模式/" title="策略模式">策略模式<sup>1</sup></a></li>
+		
+			<li><a href="/tags/观察者模式/" title="观察者模式">观察者模式<sup>1</sup></a></li>
+		
+			<li><a href="/tags/设计模式/" title="设计模式">设计模式<sup>1</sup></a></li>
+		
+		</ul>
+</div>
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">十一月 2015</a><span class="archive-list-count">1</span></li></ul>
-    </div>
-  </div>
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recents</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2016/04/25/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2015/11/26/Android-Design-Pattern/">Android开发中常见的设计模式</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
 
-  
 </aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2016 区长<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+</div>
     </div>
-  </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Li Zhangqu Page <br/>
+			This is my blog,believe it or not.</p>
+	</section>
+	 
+	<div class="social-font clearfix">
+		
+		<a href="http://weibo.com/3262478847" target="_blank" title="weibo"></a>
+		
+		
+		<a href="http://www.zhihu.com/people/zhangqu-li" target="_blank" title="twitter"></a>
+		
+		
+		
+		<a href="https://github.com/lizhangqu" target="_blank" title="github"></a>
+		
+		
+		
+	</div>
+		<p class="copyright"> © 2016 Powered by Li Zhangqu 
+		
+			,
+			<span id="busuanzi_container_site_pv">
+				This Site  <span id="busuanzi_value_site_pv"></span>
+			</span>
+			,
+			<span id="busuanzi_container_page_pv">
+			  This Page  <span id="busuanzi_value_page_pv"></span>
+			</span>
+		
+			
+		<!--
+		<a href="http://lizhangqu.com" target="_blank" title="区长">区长</a>
+		-->
+		</p>
+</div>
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
 
 
-<script src="/js/script.js"></script>
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"lizhangqu"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
 
-  </div>
-</body>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+  </body>
 </html>
