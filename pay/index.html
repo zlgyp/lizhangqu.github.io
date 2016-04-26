@@ -1,10 +1,11 @@
 
-  <!DOCTYPE HTML>
+  
+    <!DOCTYPE HTML>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   
-    <title>Category: Android | 区长的博客</title>
+    <title>pay | 区长的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="区长">
@@ -41,9 +42,9 @@ var _hmt = _hmt || [];
 
 </head>
 
-    <body>
-      <header>
-        <div>
+      <body>
+        <header>
+          <div>
 		
 			<div id="textlogo">
 				<h1 class="site-name"><a href="/" title="区长的博客">区长的博客</a></h1>
@@ -77,33 +78,52 @@ var _hmt = _hmt || [];
 			</nav>			
 </div>
 
-      </header>
-      <div id="container">
-        
-
-<div class="archive-title" >
-  <h2 class="category-icon">Android</h2>
-  
-</div>
-<div id="main" class="archive-part clearfix">
-  <div id="archive-page">
-
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/11/26/Android-Design-Pattern/" title="Android开发中常见的设计模式" itemprop="url">
-  
-    <h1 itemprop="name">Android开发中常见的设计模式</h1>
+        </header>
+        <div id="container">
+          <div id="main" class="page" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
     
-    <time datetime="2015-11-26T04:19:16.000Z" itemprop="datePublished">2015-11-26</time>
-  </a>
+      <a href="/pay/index.html" title="pay" itemprop="url">pay</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="https://plus.google.com/114779957383765950000?rel=author" title="区长" target="_blank" itemprop="author">区长</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2016-04-26T03:44:56.000Z" itemprop="datePublished">2016-04-26</time>
+    更新日期:<time datetime="2016-04-26T03:44:56.000Z" itemprop="dateModified">2016-04-26</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		  
+	</div>
+		<footer class="article-footer clearfix">
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://lizhangqu.com/pay/index.html" data-title="pay | 区长的博客" data-tsina="3262478847" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+	
+<section class="comment">
+	<div class="ds-thread"></div>
 </section>
 
-
-  </div>
-</div>
-
-      </div>
-      <footer><div id="footer" >
+</div>  
+        </div>
+        <footer><div id="footer" >
 	
 	<div class="line">
 		<span></span>
@@ -148,7 +168,7 @@ var _hmt = _hmt || [];
 		</p>
 </div>
 </footer>
-      <script src="/js/jquery-2.1.0.min.js"></script>
+        <script src="/js/jquery-2.1.0.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){ 
   $('.navbar').click(function(){
@@ -195,10 +215,72 @@ $(document).ready(function(){
 </script>
 
 
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"lizhangqu"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
 
 
 
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
 
 
-    </body>
-   </html>
+
+      </body>
+     </html>
+     
